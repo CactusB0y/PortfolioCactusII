@@ -1,0 +1,131 @@
+/* couleurs */
+
+.mintGreen {
+    background-color: #90F486;
+}
+
+.screaminGreen {
+    background-color: #43733F;
+}
+
+.mintGreenPolice {
+    color: #B2FFA9;
+}
+
+.screaminGreenPolice {
+    color: #43733F;
+}
+
+.animationmintGreen {
+    background-color: #43733F;
+    animation: togreenmint 4s ;
+    animation-fill-mode: forwards;
+}
+
+@keyframes togreenmint {
+    from {
+        background-color: #43733F;
+    }
+    
+    to {
+        background-color: #B2FFA9;
+    }
+}
+
+.divBanner {
+    height: 1009px;
+    position: relative;
+}
+
+.imgBanner {
+    height: 300px;
+    width: 300px;
+    border: solid 0.5px black;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: 42%;
+}
+
+.titleBanner {
+    position: absolute;
+    top: 54%;
+    left: 32%;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.catchBanner {
+    position: absolute;
+    top: 62%;
+    left: 40%;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.sizeNavBtn {
+    font-size: 20px;
+    color: black !important;
+    margin-right: 60px;
+}
+
+.sizeNavBtn:hover {
+    text-decoration: none;
+}
+
+.divAbout {
+    height: 682px;
+}
+
+.imgAbout{
+    height: 682px;
+    width: 557px;
+    margin-left: 347px;
+}
+
+.titleAbout{
+    font-weight: bolder;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.catchAbout{
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.divAboutSub{
+    width: 70%;
+}
+
+.ulAbout{
+    font-size: 20px;
+    margin-left: 13px;
+    margin-top: 40px;
+}
+
+
+.spanBeforeAbout{
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.btnAbout{
+    margin-left: 50px;
+    margin-top: 20px;
+    background-color: #90F486 !important;
+    border: #90F486;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 20px;
+    box-shadow: 10px 5px 5px #43733F;
+}
+
+.btnAbout:hover{
+    background-color:  #43733F !important;
+    box-shadow: 10px 5px 5px #90F486;
+    transition-duration: 1s;
+}
