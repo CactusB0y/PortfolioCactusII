@@ -5,32 +5,14 @@
       <div class="row">
         <div class="col-md-12">
           <div id="testimonial-mf" class="owl-carousel owl-theme">
-            <div class="testimonial-box">
-              <div class="author-test">
-                <img src="{{asset('img/testimonial-2.jpg')}}" alt="" class="rounded-circle b-shadow-a">
-                <span class="author">Xavi Alonso</span>
+            @foreach ($projets as $projet)
+              <div class="testimonial-box">
+                <div class="author-test">
+                  <img src="{{asset('img/'.$projet->images->img)}}" alt="" style="border-radius: 1%" height="700px" width="700px">
+                  <span class="author">{{$projet->nom}}</span>
+                </div>
               </div>
-              <div class="content-test">
-                <p class="description lead">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <span class="comit"><i class="fa fa-quote-right"></i></span>
-              </div>
-            </div>
-            <div class="testimonial-box">
-              <div class="author-test">
-                <img src="{{asset('img/testimonial-4.jpg')}}" alt="" class="rounded-circle b-shadow-a">
-                <span class="author">Marta Socrate</span>
-              </div>
-              <div class="content-test">
-                <p class="description lead">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <span class="comit"><i class="fa fa-quote-right"></i></span>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

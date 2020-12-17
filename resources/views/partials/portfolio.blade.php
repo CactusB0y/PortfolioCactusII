@@ -42,7 +42,12 @@
             </div>
           </div>  
         @endforeach
-
       </div>
     </div>
+    <div class="row d-flex justify-content-center mb-5 mx-0">
+      <div>
+        {{ $projets->links()}}  
+      </div>
+    </div>
+    
   </section><!-- End Portfolio Section -->

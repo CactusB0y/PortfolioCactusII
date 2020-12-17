@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TagController;
 use App\Models\About;
+use App\Models\Contact;
 use App\Models\Presentation;
 use App\Models\Projet;
 use App\Models\Skill;
@@ -27,7 +29,7 @@ Route::get('/', function () {
     $presentations = Presentation::all();
     $abouts = About::all();
     $skills = Skill::all();
-    $projets = Projet::all();
+    $projets = Projet::simplePaginate(3);
     return view('welcome',compact('presentations','abouts','skills','projets'));
 });
 
@@ -40,6 +42,8 @@ Route::resource('skill', SkillController::class);
 Route::resource('projet', ProjetController::class);
 
 Route::resource('tag', TagController::class);
+
+Route::resource('contact', ContactController::class);
 
 Auth::routes();
 
