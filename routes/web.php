@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\TagController;
 use App\Models\About;
 use App\Models\Contact;
+use App\Models\Info;
 use App\Models\Presentation;
 use App\Models\Projet;
 use App\Models\Skill;
@@ -30,20 +32,24 @@ Route::get('/', function () {
     $abouts = About::all();
     $skills = Skill::all();
     $projets = Projet::simplePaginate(3);
-    return view('welcome',compact('presentations','abouts','skills','projets'));
+    $infos = Info::all();
+    return view('welcome',compact('presentations','abouts','skills','projets','infos'));
 });
 
-Route::resource('presentation', PresentationController::class);
+Route::resource('presentation', PresentationController::class)->middleware('AdminPath');
 
-Route::resource('about', AboutController::class);
+Route::resource('about', AboutController::class)->middleware('AdminPath');
 
-Route::resource('skill', SkillController::class);
+Route::resource('skill', SkillController::class)->middleware('AdminPath');
 
-Route::resource('projet', ProjetController::class);
+Route::resource('projet', ProjetController::class)->middleware('AdminPath');
+Route::get('search', [ProjetController::class,'search'])->middleware('AdminPath');
 
-Route::resource('tag', TagController::class);
+Route::resource('tag', TagController::class)->middleware('AdminPath');
 
-Route::resource('contact', ContactController::class);
+Route::resource('contact', ContactController::class)->middleware('AdminPath');
+
+Route::resource('info', InfoController::class)->middleware('AdminPath');
 
 Auth::routes();
 

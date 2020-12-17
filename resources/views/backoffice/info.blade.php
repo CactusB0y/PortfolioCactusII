@@ -3,23 +3,23 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Skill</h1>
+    <h1 class="m-0 text-dark">Infos</h1>
 @stop
 
 @section('content')
-@if (session('statusskill'))
+@if (session('statusinfo'))
 <div class="alert alert-success">
-    {{ session('statusskill') }}
+    {{ session('statusinfo') }}
 </div>
 @endif
-@if (session('storeskill'))
+@if (session('storeinfo'))
 <div class="alert alert-success">
-    {{ session('storeskill') }}
+    {{ session('storeinfo') }}
 </div>
 @endif
-@if (session('deleteskill'))
+@if (session('deleteinfo'))
 <div class="alert alert-success">
-    {{ session('deleteskill') }}
+    {{ session('deleteinfo') }}
 </div>
 @endif
     <div class="row">
@@ -29,7 +29,7 @@
                     
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title">liste des Skills</h3>
+                                <h3 class="card-title">liste des Infos</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -41,30 +41,31 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>nom</th>
-                                            <th>maitrise</th>
+                                            <th>adresse(complete)</th>
+                                            <th>tel</th>
+                                            <th>mail</th>
+                                            <th>facebook</th>
+                                            <th>instagram</th>
+                                            <th>twitter</th>
                                             <th> </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($skills as $skill)
-                                            @can('look', $skill)
+                                        @foreach ($infos as $info)
+                                        @can('look', $info)
                                                 <tr>
-                                                    <td>{{$skill->nom}}</td>
-                                                    <td>{{$skill->maitrise}}</td>
+                                                    <td>{{$info->adresse}}</td>
+                                                    <td>{{$info->tel}}</td>
+                                                    <td>{{$info->mail}}</td>
+                                                    <td>{{$info->facebook}}</td>
+                                                    <td>{{$info->instagram}}</td>
+                                                    <td>{{$info->twitter}}</td>
                                                     <td>
-                                                        <div class="btn-group btn-group-sm">
-                                                            <a href="skill/{{$skill->id}}/edit" class="btn btn-info mr-1"><i class="fas fa-eye"></i></a>
-                                                            <form action="/skill/{{$skill->id}}" method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger"><a ><i class="fas fa-trash"></i></a></button>
-                                                            </form>
-                                                        </div>
+                                                        <a href="info/{{$info->id}}/edit" class="btn btn-info mr-1"><i class="fas fa-eye"></i></a>
                                                     </td>
                                                 </tr>
-                                            @endcan
-                                        @endforeach
+                                                @endcan
+                                            @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -73,5 +74,4 @@
             </div>
         </div>
     </div>
-    @include('backoffice.partials.skillAdd')
 @stop

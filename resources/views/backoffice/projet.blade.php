@@ -24,6 +24,17 @@
 @endif
     <div class="row">
         <div class="col-12">
+            <form action="/search" method="get">
+
+                <div class="input-group input-group-sm hidden-xs pb-4" style="width: 150px;">
+                  <input type="search" name="query" style="height: 38px" class="form-control  pull-right" placeholder="Search">
+      
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i style="font-size: 13px" class="fa fa-search"></i></button>
+                  </div>
+                </div>
+      
+            </form>
             <div class="card">
                 <div class="card-body">
                     
@@ -51,6 +62,9 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($projets as $projet)
+                                        @can('look', $projet)
+                                            
+                                        
                                             <tr>
                                                 <td>{{$projet->nom}}</td>
                                                 <td>{{$projet->date}}</td>
@@ -68,6 +82,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            @endcan
                                         @endforeach
                                     </tbody>
                                 </table>

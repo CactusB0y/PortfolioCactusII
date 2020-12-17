@@ -32,6 +32,16 @@ class ProjetController extends Controller
         //
     }
 
+    public function search()
+    {
+        $search_text = $_GET['query'];
+
+        $projects = Projet::where('nom','LIKE','%'. $search_text .'%')->get();
+
+        return view('backoffice.partials.search', compact('projects'));
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -40,7 +40,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @can('look', $about)
+                                            
+                                        
                                         <tr>
                                             <td>{{$about->nom}}</td>
                                             <td>{{$about->profil}}</td>
@@ -53,6 +55,7 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endcan
                                     </tbody>
                                 </table>
                             </div>

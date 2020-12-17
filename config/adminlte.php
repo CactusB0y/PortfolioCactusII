@@ -314,6 +314,17 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Infos',
+            'icon'    => 'fas fa-arrow-right',
+            'submenu' => [
+                [
+                    'text' => 'Voir',
+                    'icon' => 'fas fa-eye',
+                    'url'  => '/info',
+                ],
+            ],
+        ],
         ['header' => 'labels'],
         [
             'text'       => 'important',

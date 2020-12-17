@@ -7,6 +7,9 @@
         </ul>
     </div>
 @endif
+@can('look', Auth::user())
+  
+
 <div class="card card-primary">
     <div class="card-header">
       <h3 class="card-title">Ajouter un Skill</h3>
@@ -27,3 +30,4 @@
       </div>
     </form>
   </div>
+  @endcan

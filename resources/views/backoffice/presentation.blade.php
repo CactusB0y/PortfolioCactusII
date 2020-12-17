@@ -38,7 +38,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @can('look', $presentation) 
                                         <tr>
                                             <td><img height="50px" width="50px"
                                                     src="{{ asset('images/' . $presentation->src) }}" alt=""></td>
@@ -50,6 +50,7 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endcan
                                     </tbody>
                                 </table>
                             </div>

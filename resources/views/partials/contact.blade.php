@@ -44,27 +44,24 @@
                           Get in Touch
                         </h5>
                       </div>
-                      <div class="more-info">
-                        <p class="lead">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
-                          expedita aperiam aliquid at.
-                          Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
-                          mollitia inventore?
-                        </p>
-                        <ul class="list-ico">
-                          <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                          <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                          <li><span class="ion-email"></span> contact@example.com</li>
-                        </ul>
-                      </div>
-                      <div class="socials">
-                        <ul>
-                          <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                          <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
-                          <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-                          <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>
-                        </ul>
-                      </div>
+                      @foreach ($infos as $info)
+                        <div class="more-info">
+                          <div>
+                            <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=rue%20du%20{{$info->adresseRue}}%20{{$info->numero}}+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+                          <ul class="list-ico">
+                            <li><span class="ion-ios-location"></span> {{$info->adresse}}</li>
+                            <li><span class="ion-ios-telephone"></span> {{$info->tel}}</li>
+                            <li><span class="ion-email"></span> {{$info->mail}}</li>
+                          </ul>
+                        </div>
+                        <div class="socials">
+                          <ul>
+                            <li><a href="{{$info->facebook}}"><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
+                            <li><a href="{{$info->instagram}}"><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
+                            <li><a href="{{$info->twitter}}"><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
+                          </ul>
+                        </div>
+                      @endforeach
                     </div>
                   </div>
                 </div>
