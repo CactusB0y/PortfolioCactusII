@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-12">
           <div id="testimonial-mf" class="owl-carousel owl-theme">
-            @foreach ($projets as $projet)
+            @foreach ($projetsCarou as $projet)
               <div class="testimonial-box">
                 <div class="author-test">
                   <img src="{{asset('img/'.$projet->images->img)}}" alt="" style="border-radius: 1%" height="700px" width="700px">

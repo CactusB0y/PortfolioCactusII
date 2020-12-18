@@ -32,8 +32,9 @@ Route::get('/', function () {
     $abouts = About::all();
     $skills = Skill::all();
     $projets = Projet::simplePaginate(3);
+    $projetsCarou = Projet::all();
     $infos = Info::all();
-    return view('welcome',compact('presentations','abouts','skills','projets','infos'));
+    return view('welcome',compact('presentations','abouts','skills','projets','infos','projetsCarou'));
 });
 
 Route::resource('presentation', PresentationController::class)->middleware('AdminPath');
