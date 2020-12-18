@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\SkillController;
@@ -51,6 +52,8 @@ Route::resource('tag', TagController::class)->middleware('AdminPath');
 Route::resource('contact', ContactController::class)->middleware('AdminPath');
 
 Route::resource('info', InfoController::class)->middleware('AdminPath');
+
+Route::resource('newsletter', NewsController::class);
 
 Auth::routes();
 

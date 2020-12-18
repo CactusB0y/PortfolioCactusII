@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewProject;
 use App\Models\Image;
+use App\Models\News;
 use App\Models\Projet;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class ProjetController extends Controller
@@ -56,11 +59,15 @@ class ProjetController extends Controller
         $images->save();
         
         $projets = new Projet;
+        $news = News::all();
         $projets->nom = $request->nom;
         $projets->date = $request->date;
         $projets->link = $request->link;
         $projets->tag_id = $request->tag_id;
         $projets->image_id = $images->id;
+        foreach($news as $news){
+            Mail::to($news->email)->send(new NewProject($request));
+        }
         $projets->save();
         return redirect()->back()->with('storeprojet', 'projet added!');
     }

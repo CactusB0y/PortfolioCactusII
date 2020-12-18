@@ -19,7 +19,7 @@ class InfoSeeder extends Seeder
                 [
                     'adresseRue' => 'sillon',
                     'numero' => '98',
-                    'adresse' => "Rue d'Aerschot 30 1030 Schaerbeek",
+                    'adresse' => "Rue du Sillon 98, 1070 Anderlecht",
                     'tel' => '0486 490 741',
                     'mail' => 'abdkbib@gmail.com',
                     'facebook' => "https://www.facebook.com/profile.php?id=100007965316935",

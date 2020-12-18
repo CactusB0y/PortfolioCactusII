@@ -63,8 +63,6 @@
                                     <tbody>
                                         @foreach ($projets as $projet)
                                         @can('look', $projet)
-                                            
-                                        
                                             <tr>
                                                 <td>{{$projet->nom}}</td>
                                                 <td>{{$projet->date}}</td>

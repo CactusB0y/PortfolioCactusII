@@ -36,6 +36,15 @@
                         <button type="submit" class="btn btn-primary">Envoyer</button>
                       </form>
 
+                      <form action="/newsletter" method="post" class="mt-5">
+                        @csrf
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">S'abonner a la newsletter</label>
+                          <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                      </form>
+
                       </div>
                     </div>
                     <div class="col-md-6">

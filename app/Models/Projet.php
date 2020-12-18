@@ -14,6 +14,6 @@ class Projet extends Model
     }
     public function images()
     {
-        return $this->belongsTo('App\Models\Image','image_id');
+        return $this->belongsTo('App\Models\Image','image_id','id');
     }
 }
